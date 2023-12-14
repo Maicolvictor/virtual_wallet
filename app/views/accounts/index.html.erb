@@ -21,6 +21,8 @@
         <td><%= link_to 'Show', account %></td>
         <td><%= link_to 'Edit', edit_account_path(account) %></td>
         <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Extracts', extracts_path(account_id: account.id) %></td>
+        <td><%= link_to 'View Wallet', wallet_path(account.wallet) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,5 +30,7 @@
 
 <br>
 
-<%= link_to 'Nova conta', new_account_path %>
-<%= link_to 'Voltar a tela inicial', welcome_index_path %>
+<ul>
+  <li><%= link_to 'Nova conta', new_account_path %></li>
+  <li><%= link_to 'Voltar a tela inicial', welcome_index_path %></li>
+</ul>

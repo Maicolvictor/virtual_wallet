@@ -18,7 +18,7 @@
       <tr>
         <td><%= extract.transaction_type %></td>
         <td><%= extract.amount %></td>
-        <td><%= extract.date %></td>
+        <td><%= date_br(extract.date) %></td>
         <td><%= extract.wallet.account.owner %></td>
         <td><%= link_to 'Show', extract %></td>
         <td><%= link_to 'Edit', edit_extract_path(extract) %></td>

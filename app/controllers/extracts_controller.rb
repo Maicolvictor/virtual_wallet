@@ -3,7 +3,12 @@ class ExtractsController < ApplicationController
 
   # GET /extracts or /extracts.json
   def index
-    @extracts = Extract.all
+    if params[:account_id].present?
+      @account = Account.find(params[:account_id])
+      @extracts = @account.wallet.extracts
+    else
+      @extracts = Extract.all
+    end
   end
 
   # GET /extracts/1 or /extracts/1.json
