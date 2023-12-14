@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transaction type:</strong>
+  <%= @extract.transaction_type %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @extract.amount %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @extract.account %>
+</p>
+
+<p>
+  <strong>Wallet:</strong>
+  <%= @extract.wallet %>
+</p>
+
+<%= link_to 'Edit', edit_extract_path(@extract) %> |
+<%= link_to 'Back', extracts_path %>

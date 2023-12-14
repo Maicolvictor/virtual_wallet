@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Extracts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Transaction type</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Wallet</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @extracts.each do |extract| %>
+      <tr>
+        <td><%= extract.transaction_type %></td>
+        <td><%= extract.amount %></td>
+        <td><%= extract.date %></td>
+        <td><%= extract.wallet.account.owner %></td>
+        <td><%= link_to 'Show', extract %></td>
+        <td><%= link_to 'Edit', edit_extract_path(extract) %></td>
+        <td><%= link_to 'Destroy', extract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Voltar a tela inicial', welcome_index_path %>
